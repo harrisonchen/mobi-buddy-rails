@@ -6,6 +6,9 @@ gem 'rails', '4.1.5'
 
 gem 'bower-rails'
 
+# Authentication
+gem 'devise'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
