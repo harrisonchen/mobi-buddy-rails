@@ -1,1 +1,6 @@
-<h1>Welcome to MobiBuddy<h1>
+<h1>Welcome to Placeholder<h1>
+<% if !user_signed_in? %>
+	<%= link_to 'Sign in', new_user_session_path %>
+<% else %>
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% end %>
