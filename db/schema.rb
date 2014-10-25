@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024183304) do
+ActiveRecord::Schema.define(version: 20141025200736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gas", force: true do |t|
+    t.string   "station"
+    t.string   "country"
+    t.string   "region"
+    t.string   "city"
+    t.string   "address"
+    t.decimal  "lat"
+    t.decimal  "long"
+    t.decimal  "reg_price"
+    t.decimal  "mid_price"
+    t.decimal  "pre_price"
+    t.decimal  "diesel_price"
+    t.integer  "reg_update"
+    t.integer  "mid_update"
+    t.integer  "pre_update"
+    t.integer  "diesel_update"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name",             default: ""
