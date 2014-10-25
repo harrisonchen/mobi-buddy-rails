@@ -1,7 +1,22 @@
 <h2 class="txt-ctr font-48">Nearby Gas Stations</h2>
 
-<ul>
+<table class="gas-table">
+	<tr>
+		<th>Station</th>
+		<th>Country</th>
+		<th>Address</th>
+		<th>Regular</th>
+		<th>Mid-Grade</th>
+		<th>Premium</th>
+	</tr>
 	<% for gas in @gas_stations %>
-		<li><%= gas.station %></li>
+		<tr>
+			<td><%= gas.station %></td>
+			<td><%= gas.country %></td>
+			<td><%= gas.address %></td>
+			<td>$<%= gas.reg_price %></td>
+			<td>$<%= gas.mid_price %></td>
+			<td>$<%= gas.pre_price %></td>
+		</tr>
 	<% end %>
-</ul>
+</table>

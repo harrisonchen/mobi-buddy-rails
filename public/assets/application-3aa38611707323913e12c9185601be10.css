@@ -1,0 +1,229 @@
+/* line 1, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+html {
+  /*background-color: #282828;*/
+  font-family: 'Questrial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* line 7, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+body {
+  margin: 0;
+  height: 1000px;
+}
+
+/* line 12, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 16, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.gas-table {
+  margin: 8px auto;
+  background-color: rgba(102, 255, 153, 0.4);
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+/* line 22, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.gas-table th, .gas-table td {
+  padding: 8px;
+  border: 1px solid black;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-delay: 0s;
+}
+/* line 30, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.gas-table th {
+  background-color: rgba(102, 255, 153, 0.9);
+  text-align: left;
+}
+/* line 37, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.gas-table tr:hover td {
+  font-size: 20px;
+  background-color: rgba(202, 255, 153, 0.9);
+  /*background-color: rgba(102, 255, 153, 0.9);*/
+}
+
+/* line 45, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.shopping-trolley {
+  display: block;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+/* line 52, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.home-btn {
+  float: left;
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  background-image: url(home.png);
+  background-size: 100% 100%;
+  -webkit-transition: background-image 0.25s ease-in-out;
+  -moz-transition: background-image 0.25s ease-in-out;
+  -ms-transition: background-image 0.25s ease-in-out;
+  -o-transition: background-image 0.25s ease-in-out;
+  transition: background-image 0.25s ease-in-out;
+}
+
+/* line 66, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.home-btn:hover {
+  background-image: url(home-hover.png);
+}
+
+/* line 70, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.txt-ctr {
+  text-align: center;
+}
+
+/* line 74, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.font-48 {
+  font-size: 48px;
+}
+
+/* line 78, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.font-64 {
+  font-size: 64px;
+}
+
+/* line 82, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.nav-filler {
+  width: 840px;
+  /*height: 49px;*/
+  height: 64px;
+}
+
+/* line 88, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.nav-btn {
+  /*position: absolute;*/
+  display: block;
+  float: right;
+  padding-right: 8px;
+  padding-left: 64px;
+}
+
+/* line 96, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.drop-link {
+  /*border: 1px solid purple;*/
+  display: block;
+  float: right;
+  margin: 0;
+  height: 54px;
+}
+
+/* line 104, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav {
+  position: fixed;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid transparent;
+  display: inline-block;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 114, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul {
+  float: right;
+  /*border: 1px solid green;*/
+  display: block;
+  width: 655px;
+  margin: 0 auto;
+  padding-top: 8px;
+  list-style-type: none;
+}
+
+/* line 124, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li {
+  /*border: 1px solid red;*/
+  display: inline;
+  padding-left: 64px;
+  /*padding-right: 64px;*/
+}
+
+/* line 131, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li a {
+  color: #B0B0B0;
+  font-size: 36px;
+  transition-property: color;
+  transition-duration: .25s;
+  transition-delay: 0s;
+}
+
+/* line 139, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li a:hover {
+  color: #FFFFFF;
+}
+
+/* line 143, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn {
+  position: relative;
+}
+
+/* line 147, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn ul {
+  position: absolute;
+  top: -128px;
+  left: 280px;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: .4s;
+  transition-delay: 0s;
+}
+
+/* line 157, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn:hover ul {
+  top: 28px;
+  opacity: 1;
+}
+
+/* line 162, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn ul li {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 8px 0 8px 32px;
+  width: 200px;
+  border-top: 1px solid #B0B0B0;
+}
+
+/* line 171, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form {
+  padding: 8px;
+  background-color: rgba(102, 255, 153, 0.4);
+  width: 520px;
+  margin: 0 auto;
+}
+/* line 177, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form label {
+  font-size: 32px;
+}
+/* line 182, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form div:hover input {
+  box-shadow: 0 0 12px #66ff99;
+}
+/* line 187, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form .input {
+  margin: 8px 0 8px 0;
+  font-size: 24px;
+  width: 512px;
+}
+/* line 193, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form input:focus {
+  box-shadow: 0 0 12px #66ff99;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

@@ -13,6 +13,35 @@ a {
 	text-decoration: none;
 }
 
+.gas-table {
+	margin: 8px auto;
+	background-color: rgba(102, 255, 153, 0.4);
+	border: 1px solid black;
+	border-collapse: collapse;
+
+	th, td {
+		padding: 8px;
+		border: 1px solid black;
+		transition-property: all;
+		transition-duration: .2s;
+		transition-delay: 0s;
+	}
+
+	th {
+		background-color: rgba(102, 255, 153, 0.9);
+		text-align: left;
+	}
+
+	tr:hover {
+
+		td {
+			font-size: 20px;
+			background-color: rgba(202, 255, 153, 0.9);
+			/*background-color: rgba(102, 255, 153, 0.9);*/
+		}
+	}
+}
+
 .shopping-trolley {
 	display: block;
 	width: 500px;

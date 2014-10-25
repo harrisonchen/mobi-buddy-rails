@@ -6,6 +6,12 @@ gem 'rails', '4.1.5'
 
 gem 'bower-rails'
 
+# Database population solution
+gem 'factory_girl_rails', '~> 4.0'
+
+# create Fake data
+gem 'faker'
+
 # Authentication
 gem 'devise'
 
