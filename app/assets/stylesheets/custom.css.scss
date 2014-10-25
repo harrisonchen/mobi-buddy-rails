@@ -50,12 +50,31 @@ a {
 	font-size: 64px;
 }
 
-nav {
+.nav-filler {
+	width: 840px;
+	/*height: 49px;*/
 	height: 64px;
+}
+
+.nav-btn {
+	/*position: absolute;*/
+	display: block;
+	float: right;
+	padding-right: 8px;
+}
+
+.drop-link {
+	/*border: 1px solid purple;*/
+	display: block;
+	float: right;
+	margin: 0;
+	height: 54px;
+}
+
+nav {
 	position: fixed;
 	float: left;
 	background-color: rgba(0, 0, 0, 0.85);
-	/*background-color: #303030;*/
 	border: 1px solid transparent;
 	display: inline-block;
 	width: 100%;
@@ -63,22 +82,25 @@ nav {
 }
 
 nav ul {
-	display: block;
 	float: right;
+	/*border: 1px solid green;*/
+	display: block;
+	width: 655px;
 	margin: 0 auto;
-	padding: 0px;
+	padding-top: 8px;
 	list-style-type: none;
 }
 
 nav ul li {
+	/*border: 1px solid red;*/
 	display: inline;
 	padding-left: 64px;
-	padding-right: 64px;
+	/*padding-right: 64px;*/
 }
 
 nav ul li a {
 	color: #B0B0B0;
-	font-size: 28px;
+	font-size: 36px;
 	transition-property: color;
 	transition-duration: .25s;
 	transition-delay: 0s;
@@ -88,26 +110,14 @@ nav ul li a:hover {
 	color: #FFFFFF;
 }
 
-.nav-btn {
-	position: absolute;
-	display: block;
-}
-
-.nav-filler {
-	width: 840px;
-	/*height: 49px;*/
-	height: 64px;
-}
-
 .dropdown-btn {
-	display: block;
-	height: 64px;
+	position: relative;
 }
 
 .dropdown-btn ul {
 	position: absolute;
 	top: -128px;
-	right: 0;
+	left: 280px;
 	opacity: 0;
 	transition-property: all;
 	transition-duration: .4s;
@@ -115,25 +125,18 @@ nav ul li a:hover {
 }
 
 .dropdown-btn:hover ul{
-	top: 65px;
+	top: 28px;
 	opacity: 1;
 }
 
 .dropdown-btn ul li {
 	display: block;
 	background-color: rgba(0, 0, 0, 0.85);
-	/*background-color: #303030;*/
 	padding: 8px 0 8px 32px;
-	width: 140px;
+	width: 200px;
 	border-top: 1px solid #B0B0B0;
 }
 
-.dropdown-btn .drop-link {
-	display: block;
-	padding-top: 14px;
-	height: 50px;
-	width: 300px;
-}
 
 .form {
 	padding: 8px;
