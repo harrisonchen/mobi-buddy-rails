@@ -1,0 +1,150 @@
+/* line 1, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+html {
+  /*background-color: #282828;*/
+  font-family: 'Questrial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* line 7, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+body {
+  margin: 0;
+}
+
+/* line 11, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 15, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.txt-ctr {
+  text-align: center;
+}
+
+/* line 19, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.font-48 {
+  font-size: 48px;
+}
+
+/* line 23, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.font-64 {
+  font-size: 64px;
+}
+
+/* line 27, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav {
+  position: fixed;
+  float: left;
+  /*background-color: rgba(0, 0, 0, 0.65);*/
+  background-color: #303030;
+  border: 1px solid transparent;
+  display: inline-block;
+  width: 100%;
+  z-index: 10 !important;
+}
+
+/* line 38, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul {
+  display: block;
+  float: right;
+  margin: 0 auto;
+  padding: 8px;
+  list-style-type: none;
+}
+
+/* line 46, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li {
+  display: inline;
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+/* line 52, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li a {
+  color: #B0B0B0;
+  font-size: 28px;
+  transition-property: color;
+  transition-duration: .25s;
+  transition-delay: 0s;
+}
+
+/* line 60, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+nav ul li a:hover {
+  color: #FFFFFF;
+}
+
+/* line 64, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.nav-filler {
+  width: 840px;
+  /*height: 49px;*/
+  height: 64px;
+}
+
+/* line 70, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn {
+  position: relative;
+  border: 1px solid green;
+}
+
+/* line 75, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn:hover ul {
+  visibility: visible;
+  top: 20px;
+  opacity: 1;
+}
+
+/* line 81, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn ul {
+  position: absolute;
+  visibility: hidden;
+  top: -128px;
+  right: 20px;
+  opacity: 0;
+  z-index: -1;
+  transition-property: all;
+  transition-duration: .4s;
+  transition-delay: 0s;
+}
+
+/* line 93, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.dropdown-btn ul li {
+  display: block;
+  /*background-color: rgba(0, 0, 0, 0.65);*/
+  background-color: #303030;
+  padding: 8px 0 8px 32px;
+  width: 140px;
+  border-top: 1px solid #B0B0B0;
+}
+
+/* line 102, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form {
+  padding: 8px;
+  background-color: #F0F0F0;
+  width: 520px;
+  margin: 0 auto;
+}
+/* line 108, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form label {
+  font-size: 32px;
+}
+/* line 112, /Users/harrison/mobibuddy/app/assets/stylesheets/custom.css.scss */
+.form .input {
+  margin: 8px 0 8px 0;
+  font-size: 24px;
+  width: 512px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
