@@ -6,10 +6,36 @@ html {
 
 body {
 	margin: 0;
+	height: 1000px;
 }
 
 a {
 	text-decoration: none;
+}
+
+.shopping-trolley {
+	display: block;
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.home-btn {
+	float: left;
+	width: 64px;
+	height: 64px;
+	margin: 0;
+	background-image: url(home.png);
+	background-size: 100% 100%;
+	-webkit-transition: background-image 0.25s ease-in-out;
+	-moz-transition: background-image 0.25s ease-in-out;
+	-ms-transition: background-image 0.25s ease-in-out;
+	-o-transition: background-image 0.25s ease-in-out;
+	transition: background-image 0.25s ease-in-out;
+}
+
+.home-btn:hover {
+	background-image: url(home-hover.png);
 }
 
 .txt-ctr {
@@ -25,21 +51,22 @@ a {
 }
 
 nav {
+	height: 64px;
 	position: fixed;
 	float: left;
-	/*background-color: rgba(0, 0, 0, 0.65);*/
-	background-color: #303030;
+	background-color: rgba(0, 0, 0, 0.85);
+	/*background-color: #303030;*/
 	border: 1px solid transparent;
 	display: inline-block;
 	width: 100%;
-	z-index: 10 !important;
+	z-index: 10;
 }
 
 nav ul {
 	display: block;
 	float: right;
 	margin: 0 auto;
-	padding: 8px;
+	padding: 0px;
 	list-style-type: none;
 }
 
@@ -61,6 +88,11 @@ nav ul li a:hover {
 	color: #FFFFFF;
 }
 
+.nav-btn {
+	position: absolute;
+	display: block;
+}
+
 .nav-filler {
 	width: 840px;
 	/*height: 49px;*/
@@ -68,40 +100,44 @@ nav ul li a:hover {
 }
 
 .dropdown-btn {
-	position: relative;
-	border: 1px solid green;
-}
-
-.dropdown-btn:hover ul{
-	visibility: visible;
-	top: 20px;
-	opacity: 1;
+	display: block;
+	height: 64px;
 }
 
 .dropdown-btn ul {
 	position: absolute;
-	visibility: hidden;
 	top: -128px;
-	right: 20px;
+	right: 0;
 	opacity: 0;
-	z-index: -1;
 	transition-property: all;
 	transition-duration: .4s;
 	transition-delay: 0s;
 }
 
+.dropdown-btn:hover ul{
+	top: 65px;
+	opacity: 1;
+}
+
 .dropdown-btn ul li {
 	display: block;
-	/*background-color: rgba(0, 0, 0, 0.65);*/
-	background-color: #303030;
+	background-color: rgba(0, 0, 0, 0.85);
+	/*background-color: #303030;*/
 	padding: 8px 0 8px 32px;
 	width: 140px;
 	border-top: 1px solid #B0B0B0;
 }
 
+.dropdown-btn .drop-link {
+	display: block;
+	padding-top: 14px;
+	height: 50px;
+	width: 300px;
+}
+
 .form {
 	padding: 8px;
-	background-color: #F0F0F0;
+	background-color: rgba(102, 255, 153, 0.4);
 	width: 520px;
 	margin: 0 auto;
 
@@ -109,9 +145,19 @@ nav ul li a:hover {
 		font-size: 32px;
 	}
 
+	div:hover {
+		input {
+			box-shadow: 0 0 12px rgba(102, 255, 153, 1);
+		}
+	}
+
 	.input {
 		margin: 8px 0 8px 0;
 		font-size: 24px;
 		width: 512px;
+	}
+
+	input:focus {
+		box-shadow: 0 0 12px rgba(102, 255, 153, 1);
 	}
 }

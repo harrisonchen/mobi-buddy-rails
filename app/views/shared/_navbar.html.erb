@@ -1,18 +1,16 @@
 <nav>
-	<%= link_to "home", root_path %>
+	<div class="home-btn"></div>
 	<ul>
 		<% unless user_signed_in? %>
-			<li><%= link_to "Sign in", new_user_session_path %></li>
+			<li><%= link_to "Sign in", new_user_session_path, class: "nav-btn" %></li>
 		<% else %>
-			<div class="dropdown-btn">
-				<li>
-					<%= link_to "#{current_user.email}&darr;".html_safe, '#' %>
-					<ul>
-						<li><%= link_to "Account", edit_user_registration_path %></li>
-						<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-					</ul>
-				</li>
-			</div>
+			<li class="dropdown-btn">
+				<%= link_to "#{current_user.email}&darr;".html_safe, '#', class: "drop-link" %>
+				<ul>
+					<li><%= link_to "Account", edit_user_registration_path %></li>
+					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+				</ul>
+			</li>
 		<% end %>
 	</ul>
 </nav>
