@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  match 'nearby_gas', to: 'gas#index', via: 'GET'
+  match 'gas_stations', to: 'gas#index', via: 'GET'
+  match 'nearby_gas', to: 'gas#nearbyGas', via: 'GET'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
