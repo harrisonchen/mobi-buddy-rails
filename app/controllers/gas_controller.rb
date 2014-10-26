@@ -11,6 +11,7 @@ class GasController < ApplicationController
   	@lat = params["lat"].to_f
   	@long = params["long"].to_f
   	@gas = Gas.where(lat: (@lat-5)..(@lat+5), long: (@long-5)..(@long+5))
+  	puts @gas
   	respond_with(@gas)
   end
 
