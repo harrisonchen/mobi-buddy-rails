@@ -8,6 +8,7 @@ class GasController < ApplicationController
 	end
 
   def nearbyGas
+  	puts params
   	@lat = params["lat"].to_f
   	@long = params["long"].to_f
   	puts "aaaaaaaaaaaaaaaaaaaaaaaa"
