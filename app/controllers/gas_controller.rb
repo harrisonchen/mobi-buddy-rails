@@ -10,7 +10,7 @@ class GasController < ApplicationController
   def nearbyGas
   	@lat = params["lat"].to_f
   	@long = params["long"].to_f
-  	@gas = Gas.where(lat: (@lat-5)..(@lat+5), long: (@long-5)..(@long+5))
+  	@gas = Gas.where(lat: (@lat-50)..(@lat+50), long: (@long-50)..(@long+50))
   	respond_with(@gas)
   end
 
