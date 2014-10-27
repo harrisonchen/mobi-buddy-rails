@@ -11,8 +11,9 @@ class GasController < ApplicationController
   	# GET request
     lat = params["lat"]
     long = params["long"]
+    dist = params["dist"]
     url = "http://api.mygasfeed.com/stations/radius/" + lat +
-          "/" + long + "/1/reg/price/xfakzg0s3n.json"
+          "/" + long + "/" + dist + "/reg/price/xfakzg0s3n.json"
     request = Typhoeus.get(url)
     response = JSON.parse(request.response_body)
     respond_with(response)
