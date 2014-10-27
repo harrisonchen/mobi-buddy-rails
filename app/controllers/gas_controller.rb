@@ -8,10 +8,26 @@ class GasController < ApplicationController
 	end
 
   def nearbyGas
-  	@lat = params["lat"].to_f
-  	@long = params["long"].to_f
-  	@gas = Gas.where(lat: (@lat-50)..(@lat+50), long: (@long-50)..(@long+50))
-  	respond_with(@gas)
+  	# GET request
+    lat = params["lat"]
+    long = params["long"]
+    url = "http://api.mygasfeed.com/stations/radius/" + lat +
+          "/" + long + "/1/reg/price/xfakzg0s3n.json"
+    request = Typhoeus.get(url)
+    response = JSON.parse(request.response_body)
+    respond_with(response)
+  end
+
+  def updateGas
+    # POST request
+    stationid = params["stationid"]
+    price = params["price"]
+    fueltype = params["fueltype"]
+    url = "http://api.mygasfeed.com/locations/price/xfakzg0s3n.json"
+    body = { price: price, fueltype: fueltype, stationid: stationid }
+    request = Typhoeus.post(url, body: body)
+    response = JSON.parse(request.response_body)
+    respond_with(response)
   end
 
   def create
