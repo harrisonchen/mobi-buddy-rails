@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.5'
 
 gem 'bower-rails'
+gem 'typhoeus'
+gem 'pry-debugger'
 
 # Database population solution
 gem 'factory_girl_rails', '~> 4.0'
