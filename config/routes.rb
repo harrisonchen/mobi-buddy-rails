@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
+  match 'signup', to: 'users#sign_up', via: 'GET'
+  match 'signin', to: 'users#sign_in', via: 'GET'
+
   match 'gas_stations', to: 'gas#index', via: 'GET'
   match 'nearby_gas', to: 'gas#nearbyGas', via: 'GET'
   match 'nearbyGas', to: 'gas#nearbyGas', via: 'GET'
