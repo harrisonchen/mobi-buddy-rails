@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   match 'gas_stations', to: 'gas#index', via: 'GET'
   match 'nearby_gas', to: 'gas#nearbyGas', via: 'GET'
-  match 'nearbyGas', to: 'gas#nearbyGas', via: 'GET'
-  match 'updateGas', to: 'gas#updateGas', via: 'GET'
+  match 'update_gas', to: 'gas#updateGas', via: 'GET'
+  match 'find_gas_by', to: 'gas#findGasBy', via: 'GET'
+  match 'get_brands', to: 'gas#getBrands', via: 'GET'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
