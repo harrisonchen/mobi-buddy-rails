@@ -1,5 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   skip_before_filter :authenticate_user!, :only => [:create, :new]
+  skip_before_filter :verify_signed_out_user, :only => [:destroy]
   # skip_authorization_check only: [:create, :failure, :show_current_user, :options, :new]
   respond_to :json
 
@@ -39,6 +40,7 @@ class Users::SessionsController < Devise::SessionsController
         user = User.find_by_authentication_token(request.headers['X-API-TOKEN'])
         if user
           user.reset_authentication_token!
+          user.save
           render :json => { :message => 'Session deleted.' }, :success => true, :status => 204
         else
           render :json => { :message => 'Invalid token.' }, :status => 404
