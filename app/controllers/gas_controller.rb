@@ -1,6 +1,4 @@
 class GasController < ApplicationController
-	before_action :authenticate_user!, only: []
-
 	respond_to :json
 
 	def index
