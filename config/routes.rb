@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'gas/index'
 
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
+
+  # devise_for :users
   root 'home#index'
 
   match 'signup', to: 'users#sign_up', via: 'GET'
