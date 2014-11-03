@@ -1,31 +1,49 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  skip_before_filter :authenticate_user!
+
+  respond_to :json
+
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    respond_to do |format|
+      format.html {
+        super
+      }
+      format.json {
+        build_resource({ email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] })
+        resource_saved = resource.save
+        if resource_saved
+          sign_in(resource, store: false)
+          render json: { user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
+        else
+          render json: { success: false, message: 'Error signing up' }, status: 401
+        end
+      }
+    end
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

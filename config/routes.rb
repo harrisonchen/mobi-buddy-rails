@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'gas/index'
 
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions",
+                                    registrations: "users/registrations" }
 
   # devise_for :users
   root 'home#index'
