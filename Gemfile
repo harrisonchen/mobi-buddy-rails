@@ -6,7 +6,6 @@ gem 'rails', '4.1.5'
 
 gem 'bower-rails'
 gem 'typhoeus'
-gem 'pry-debugger'
 
 # Database population solution
 gem 'factory_girl_rails', '~> 4.0'
@@ -42,6 +41,7 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+	gem 'pry-debugger'
 end
 
 group :production do
