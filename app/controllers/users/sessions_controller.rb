@@ -23,7 +23,7 @@ class Users::SessionsController < Devise::SessionsController
         if resource.valid_password?(params[:password])
           user = User.find_by_email(params[:email])
           sign_in(user, store: false)
-          render :json => { user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
+          render :json => { success: true, user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
         else
           invalid_login_attempt
         end
