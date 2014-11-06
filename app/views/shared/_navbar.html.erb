@@ -1,9 +1,10 @@
 <nav>
-	<div class="home-btn"></div>
+	<!-- <div class="home-btn"></div> -->
+	<a href="#/" style="float: left; display: block; font-size: 42px; color: green;">Home</a>
 	<ul>
 		<% unless user_signed_in? %>
-			<li><%= link_to "Sign in", new_user_session_path, class: "nav-btn" %></li>
-			<li><%= link_to "Gas", gas_stations_path, class: "nav-btn" %></li>
+			<li><a href="#/sign_in" class="nav-btn">Sign in</a></li>
+			<li><a href="#/gas" class="nav-btn">Gas</a></li>
 		<% else %>
 			<li><%= link_to "Gas", gas_stations_path %></li>
 			<li class="dropdown-btn">
