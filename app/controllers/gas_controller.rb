@@ -1,4 +1,8 @@
 class GasController < ApplicationController
+  skip_before_filter :authenticate_user_from_token!,
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand]
+  skip_before_filter :authenticate_user!,
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand]
 	respond_to :json
 
 	def index
@@ -9,7 +13,7 @@ class GasController < ApplicationController
     lat = params["lat"]
     long = params["long"]
     dist = params["dist"]
-    sortBy = params["sortBy"]
+    sortBy = params["sortBy"] || "price"
     url = "http://api.mygasfeed.com/stations/radius/" + lat +
           "/" + long + "/" + dist + "/reg/" + sortBy + "/xfakzg0s3n.json"
     request = Typhoeus.get(url)
