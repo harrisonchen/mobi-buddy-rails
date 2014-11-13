@@ -18,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         super
       }
       format.json {
-        if User.find_email_by(user_email)
+        if User.find_by_email(params[:email])
           render json: { success: false, message: 'Email already used' }, status: 401
         end
         build_resource({ email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] })
