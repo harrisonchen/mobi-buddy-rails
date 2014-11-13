@@ -20,15 +20,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
       format.json {
         if User.find_by_email(params[:email])
           render json: { success: false, message: 'Email already used' }, status: 401
-        end
-        build_resource({ email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] })
-        resource_saved = resource.save
-        if resource_saved
-          sign_in(resource, store: false)
-          render json: { success: true, user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
         else
-          render json: { success: false, message: 'Error signing up' }, status: 401
+          build_resource({ email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] })
+          resource_saved = resource.save
+          if resource_saved
+            sign_in(resource, store: false)
+            render json: { success: true, user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
+          else
+            render json: { success: false, message: 'Error signing up' }, status: 401
+          end
         end
+        
       }
     end
   end
