@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   match 'signup', to: 'users#sign_up', via: 'GET'
   match 'signin', to: 'users#sign_in', via: 'GET'
 
+  match 'search', to: 'gas#search', via: 'GET'
   match 'gas_stations', to: 'gas#index', via: 'GET'
   match 'nearby_gas', to: 'gas#nearbyGas', via: 'GET'
   match 'update_gas', to: 'gas#updateGas', via: 'GET'

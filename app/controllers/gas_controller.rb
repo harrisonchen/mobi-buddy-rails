@@ -13,12 +13,46 @@ class GasController < ApplicationController
     lat = params["lat"]
     long = params["long"]
     dist = params["dist"]
-    sortBy = params["sortBy"] || "price"
+    sortBy = params["sortBy"] || "reg"
     url = "http://api.mygasfeed.com/stations/radius/" + lat +
-          "/" + long + "/" + dist + "/reg/" + sortBy + "/xfakzg0s3n.json"
+          "/" + long + "/" + dist + "/reg/price/xfakzg0s3n.json"
     request = Typhoeus.get(url)
     response = JSON.parse(request.response_body)
-    respond_with(response)
+    stations = response["stations"]
+    responseHash = { stations: [] }
+    for station in stations
+      if entry = Gas.find_by_id(station["id"])
+        responseHash[:stations].push(entry)
+      else
+        g = Gas.create(station)
+        responseHash[:stations].push(g)
+      end
+    end
+    sort(responseHash, sortBy)
+    respond_with(responseHash)
+  end
+
+  def sort(response, sortBy)
+    response[:stations].sort_by! do |item|
+      case sortBy
+      when "reg"
+        item[:reg_price]
+      when "mid"
+        item[:mid_price]
+      when "pre"
+        item[:pre_price]
+      when "diesel"
+        item[:diesel_price]
+      when "distance"
+        item[:distance]
+      when "price"
+        item[:reg_price]
+      end
+    end
+  end
+
+  def search
+
   end
 
   def updateGas
