@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141102042347) do
     t.string   "region"
     t.string   "city"
     t.string   "address"
+    t.string   "phone",         default: "951-277-7772"
     t.string   "lat"
     t.string   "lng"
     t.string   "diesel",        default: "0"

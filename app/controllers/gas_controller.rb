@@ -52,7 +52,10 @@ class GasController < ApplicationController
   end
 
   def search
-
+    query = params["query"]
+    response = Gas.where("zip LIKE ? OR address LIKE ? OR city LIKE ?",
+                           "%#{query}%", "%#{query}%", "%#{query}%")
+    respond_with(response)
   end
 
   def updateGas
