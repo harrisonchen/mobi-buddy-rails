@@ -25,7 +25,7 @@ class CreateGas < ActiveRecord::Migration
       t.string :pre_update, default: "RCART"
       t.string :diesel_update, default: "RCART"
       t.string :distance
-      t.string :credit, default: "0"
+      t.string :credit, default: "1"
       t.string :carwash, default: "0"
       t.string :hours, default: "0"
 

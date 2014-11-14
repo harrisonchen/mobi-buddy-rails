@@ -55,7 +55,8 @@ class GasController < ApplicationController
     query = params["query"].downcase
     response = Gas.where("LOWER(zip) LIKE ? OR LOWER(address) LIKE ? OR LOWER(city) LIKE ?",
                            "%#{query}%", "%#{query}%", "%#{query}%")
-    respond_with(response)
+    responseHash = { stations: response }
+    respond_with(responseHash)
   end
 
   def updateGas
