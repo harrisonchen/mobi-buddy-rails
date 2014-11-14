@@ -1,8 +1,8 @@
 class GasController < ApplicationController
   skip_before_filter :authenticate_user_from_token!,
-                       only: [:index, :nearbyGas, :findGasBy, :getBrand]
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas]
   skip_before_filter :authenticate_user!,
-                       only: [:index, :nearbyGas, :findGasBy, :getBrand]
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas]
 	respond_to :json
 
 	def index
