@@ -59,11 +59,18 @@ class GasController < ApplicationController
     stationid = params["stationid"]
     price = params["price"]
     fueltype = params["fueltype"]
-    url = "http://api.mygasfeed.com/locations/price/xfakzg0s3n.json"
-    body = { price: price, fueltype: fueltype, stationid: stationid }
-    request = Typhoeus.post(url, body: body)
-    response = JSON.parse(request.response_body)
-    respond_with(response)
+    entry = Gas.find_by_id(stationid)
+    if entry
+      case fueltype
+      when "reg"
+        entry.update(reg_price: price)
+      when "mid"
+        entry.update(mid_price: price)
+      when "pre"
+        entry.update(pre_price: price)
+      end
+    end
+    respond_with(entry)
   end
 
   def findGasBy
