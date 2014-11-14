@@ -1,8 +1,8 @@
 class GasController < ApplicationController
   skip_before_filter :authenticate_user_from_token!,
-                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas]
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas, :search]
   skip_before_filter :authenticate_user!,
-                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas]
+                       only: [:index, :nearbyGas, :findGasBy, :getBrand, :updateGas, :search]
 	respond_to :json
 
 	def index
@@ -52,8 +52,8 @@ class GasController < ApplicationController
   end
 
   def search
-    query = params["query"]
-    response = Gas.where("zip LIKE ? OR address LIKE ? OR city LIKE ?",
+    query = params["query"].downcase
+    response = Gas.where("LOWER(zip) LIKE ? OR LOWER(address) LIKE ? OR LOWER(city) LIKE ?",
                            "%#{query}%", "%#{query}%", "%#{query}%")
     respond_with(response)
   end
