@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions",
                                     registrations: "users/registrations" }
 
-  # devise_for :users
+  resources :items
+
   root 'home#index'
 
   match 'signup', to: 'users#sign_up', via: 'GET'
