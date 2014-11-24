@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :wishlist
+
   before_save :ensure_authentication_token!
 
   def generate_secure_token_string

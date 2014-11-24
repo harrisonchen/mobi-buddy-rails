@@ -24,6 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
           build_resource({ email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] })
           resource_saved = resource.save
           if resource_saved
+            Wishlist.create(user_id: resource.id)
             sign_in(resource, store: false)
             render json: { success: true, user: { email: resource.email, :auth_token => resource.authentication_token } }, success: true, status: :created
           else
