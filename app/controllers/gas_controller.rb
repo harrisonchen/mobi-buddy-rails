@@ -28,7 +28,7 @@ class GasController < ApplicationController
         responseHash[:stations].push(g)
       end
     end
-    sort(responseHash, sortBy)
+    responseHash = sort(responseHash, sortBy)
     respond_with(responseHash)
   end
 
@@ -49,14 +49,18 @@ class GasController < ApplicationController
         item[:reg_price]
       end
     end
+
+    response
   end
 
   def search
     query = params["query"].downcase
     dist = "4"
     response = Gas.where("LOWER(zip) LIKE ? OR LOWER(address) LIKE ? OR LOWER(city) LIKE ? AND distance < ?",
-                           "%#{query}%", "%#{query}%", "%#{query}%", "%#{dist}%")
-    responseHash = { stations: response }
+                           "%#{query}%", "%#{query}%", "%#{query}%", "%#{dist}%").order("distance ASC").limit(20)
+    stations = response.as_json
+    responseHash = { stations: stations }
+    responseHash = sort(responseHash, "reg")
     # sort(responseHash, "reg")
     respond_with(responseHash)
   end
