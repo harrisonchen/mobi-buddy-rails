@@ -5,9 +5,12 @@ class ItemsController < ApplicationController
 	before_filter :authenticate_user!
 
 	def create
-		item = Item.create(wishlist_id: current_user.wishlist.id, name: params[:name] || "")
+		item = Item.create(wishlist_id: current_user.wishlist.id,
+											 name: params[:name] || "",
+											 price: params[:price],
+											 category: params[:category])
 
-		render :json => { success: true, item: { id: item.id, name: item.name, wishlist_id: item.wishlist_id } }
+		render :json => { success: true, item: item.as_json }
 	end
 
 	def destroy

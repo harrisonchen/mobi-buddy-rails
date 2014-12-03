@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141203072824) do
     t.datetime "updated_at"
     t.string   "category",    default: ""
     t.string   "price",       default: "0.00"
+    t.string   "image_url",   default: ""
   end
 
   create_table "products", force: true do |t|

@@ -5,6 +5,6 @@ class WishlistController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
-		respond_with(Wishlist.where(user_id: current_user.id)[0].items)
+		respond_with(wishlist: Wishlist.where(user_id: current_user.id)[0].items )
 	end
 end
