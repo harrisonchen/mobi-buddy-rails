@@ -9,7 +9,10 @@ class ItemsController < ApplicationController
 											 name: params[:name] || "",
 											 price: params[:price],
 											 category: params[:category],
-											 image_url: params[:image_url])
+											 image_url: params[:image_url],
+											 lat: params[:lat],
+											 long: params[:long],
+											 store_name: params[:store_name])
 
 		render :json => { success: true, item: item.as_json }
 	end
