@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   match 'get_brands', to: 'gas#getBrands', via: 'GET'
   match 'wishlist', to: 'wishlist#index', via: 'GET'
 
+  match 'products', to: 'products#index', via: 'GET'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
