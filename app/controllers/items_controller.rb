@@ -8,7 +8,8 @@ class ItemsController < ApplicationController
 		item = Item.create(wishlist_id: current_user.wishlist.id,
 											 name: params[:name] || "",
 											 price: params[:price],
-											 category: params[:category])
+											 category: params[:category],
+											 image_url: params[:image_url])
 
 		render :json => { success: true, item: item.as_json }
 	end
