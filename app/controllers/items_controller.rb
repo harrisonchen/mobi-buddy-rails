@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
 	before_filter :authenticate_user!
 
 	def create
-		item = Item.find_by_name(params[:name])
-		if !Item.exists?(name: params[:name])
+		if !current_user.wishlist.items.exists?(name: params[:name])
 			item = Item.create(wishlist_id: current_user.wishlist.id,
 												 name: params[:name] || "",
 												 price: params[:price],
@@ -23,7 +22,7 @@ class ItemsController < ApplicationController
 	end
 
 	def destroy
-		Item.find_by_id(params[:id]).destroy
+		current_user.wishlist.items.find_by_id(params[:id]).destroy
 
 		render :json => { success: true }
 	end
