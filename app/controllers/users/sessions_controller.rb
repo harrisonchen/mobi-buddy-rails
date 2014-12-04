@@ -41,7 +41,7 @@ class Users::SessionsController < Devise::SessionsController
         if user
           user.reset_authentication_token!
           user.save
-          render :json => { :message => 'Session deleted.' }, :success => true, :status => 204
+          render :json => { success: true, :message => 'Session deleted.' }
         else
           render :json => { :message => 'Invalid token.' }, :status => 404
         end
